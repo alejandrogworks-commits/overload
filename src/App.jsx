@@ -66,9 +66,7 @@ export default function App() {
   const [coachMessages, setCoachMessages] = useState([]);
   const [coachInput, setCoachInput] = useState("");
   const [coachLoading, setCoachLoading] = useState(false);
-  const [isPro, setIsPro] = useState(() => {
-    try { return localStorage.getItem("overload_pro") === "true"; } catch { return false; }
-  });
+  const [isPro, setIsPro] = useState(true);
   const [weeklyReport, setWeeklyReport] = useState(null);
   const [reportLoading, setReportLoading] = useState(false);
   const chatEndRef = useRef(null);
