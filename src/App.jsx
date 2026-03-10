@@ -519,7 +519,7 @@ self.addEventListener("fetch", e => {
     setWeeklyReport(null);
     const summary = buildDataSummary();
     try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("/api/coach", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -545,7 +545,7 @@ self.addEventListener("fetch", e => {
     const summary = buildDataSummary();
     const systemPrompt = `You are an expert strength coach with access to the athlete's full workout history:\n${summary}\n\nBe direct, specific, and back up advice with their actual numbers. Keep responses concise.`;
     try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("/api/coach", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
